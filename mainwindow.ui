@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1327</width>
+    <height>509</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Description v5.0</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QFrame" name="frame">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>600</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QSplitter" name="splitter">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QTreeView" name="treeView">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="animated">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QListView" name="listView"/>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="minimumSize">
+           <size>
+            <width>101</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Control</string>
+          </property>
+          <widget class="QToolButton" name="tree_tbtn">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>30</y>
+             <width>80</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Tree</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="list_tbtn">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>60</y>
+             <width>80</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>List</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="tray_checkbox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>90</y>
+             <width>85</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Minimize
+to tray</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="fitBtn">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>160</y>
+             <width>21</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="toolTip">
+            <string>Fit image to width</string>
+           </property>
+           <property name="text">
+            <string>Fit</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="openBtn">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>160</y>
+             <width>21</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="toolTip">
+            <string>Open file in parent directory</string>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="comboBox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>280</y>
+             <width>79</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="editable">
+            <bool>true</bool>
+           </property>
+           <property name="maxVisibleItems">
+            <number>5</number>
+           </property>
+          </widget>
+          <widget class="QSlider" name="zoomSlider">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>320</y>
+             <width>71</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="minimum">
+            <number>20</number>
+           </property>
+           <property name="maximum">
+            <number>200</number>
+           </property>
+           <property name="singleStep">
+            <number>5</number>
+           </property>
+           <property name="sliderPosition">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QLabel" name="zoomLbl">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>340</y>
+             <width>59</width>
+             <height>14</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>100%</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="addBtn">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>370</y>
+             <width>41</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Add</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="deleteBtn">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>370</y>
+             <width>41</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Del</string>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="saveBtn">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>390</y>
+             <width>41</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Save</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>130</y>
+             <width>81</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWebEngineView" name="webEngineView" native="true">
+       <property name="url" stdset="0">
+        <url>
+         <string>about:blank</string>
+        </url>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1327</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebEngineWidgets/QWebEngineView</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

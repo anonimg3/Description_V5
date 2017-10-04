@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/js">
+        <file>prism.js</file>
+    </qresource>
+    <qresource prefix="/css">
+        <file>prism.css</file>
+    </qresource>
+</RCC>

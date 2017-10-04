@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+    </head>
+    <body style="background: black; margin: 0px;">
+        <pre>
+            <code class="language-java" >
+                <xmp id="xmp">                    
+/* Object example "Circle" */
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.Arrays;
+
+public class Circle
+{
+    private double promien;
+    private int id;
+    private  static int nextId;
+
+    // default constructor
+    public  Circle()
+    {
+        this(2.0);
+        // or
+        // promien = 1.0;
+    }
+    // 2nd constructor
+    public Circle(double r)
+    {
+        id = nextId;
+        nextId++;
+        promien = r;
+    }
+    public void setPromien(double r)
+    {
+        promien = r;
+    }
+    public double getPromien()
+    {
+        return promien;
+    }
+    public int getId()
+    {
+        return id;
+    }
+    public double obliczObwodKola()
+    {
+        return 2*Math.PI*promien;
+    }
+    public double obliczPoleKola()
+    {
+        return Math.PI*promien*promien;
+    }
+    public static void main (String[] args)
+    {
+        // create new "circle" object type of Circle
+        Circle circle = new Circle(2.5);
+        //create 3 new object "circleArray" type of Circle
+        Circle[] circleArray = new Circle[3];
+        circleArray[0] = new Circle(3.1);
+        circleArray[1] = new Circle(4.7);
+        circleArray[2] = new Circle(2.9);
+
+        System.out.println( "ID kola: " + circle.getId() );
+        System.out.println( "Promien kola: " + circle.getPromien() );
+        System.out.println( "Obwod kola: " + circle.obliczObwodKola() );
+        System.out.println( "Pole kola: " + circle.obliczPoleKola() );
+
+        for( Circle x:circleArray)
+        {
+            System.out.println("ID kola: " + x.getId());
+            System.out.println("Promien kola: " + x.getPromien());
+            System.out.println("Obwod kola: " + x.obliczObwodKola());
+            System.out.println("Pole kola: " + x.obliczPoleKola());
+        }
+    }
+    static
+    {
+        nextId = 1; // ID of 1st object
+    }
+}
+                </xmp>
+            </code>
+        </pre>
+    </body>
+</html>
