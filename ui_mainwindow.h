@@ -46,9 +46,7 @@ public:
     QTreeView *treeView;
     QListView *listView;
     QGroupBox *groupBox;
-    QToolButton *tree_tbtn;
-    QToolButton *list_tbtn;
-    QCheckBox *tray_checkbox;
+    QCheckBox *trayChckBx;
     QToolButton *fitBtn;
     QToolButton *openBtn;
     QComboBox *comboBox;
@@ -58,6 +56,8 @@ public:
     QToolButton *deleteBtn;
     QToolButton *saveBtn;
     QLineEdit *lineEdit;
+    QToolButton *treeBtn;
+    QToolButton *listBtn;
     QWebEngineView *webEngineView;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
@@ -104,27 +104,17 @@ public:
         groupBox = new QGroupBox(frame);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setMinimumSize(QSize(101, 0));
-        tree_tbtn = new QToolButton(groupBox);
-        tree_tbtn->setObjectName(QStringLiteral("tree_tbtn"));
-        tree_tbtn->setGeometry(QRect(10, 30, 80, 20));
-        tree_tbtn->setCheckable(true);
-        tree_tbtn->setChecked(true);
-        list_tbtn = new QToolButton(groupBox);
-        list_tbtn->setObjectName(QStringLiteral("list_tbtn"));
-        list_tbtn->setGeometry(QRect(10, 60, 80, 20));
-        list_tbtn->setCheckable(true);
-        list_tbtn->setChecked(true);
-        tray_checkbox = new QCheckBox(groupBox);
-        tray_checkbox->setObjectName(QStringLiteral("tray_checkbox"));
-        tray_checkbox->setGeometry(QRect(10, 90, 85, 31));
+        trayChckBx = new QCheckBox(groupBox);
+        trayChckBx->setObjectName(QStringLiteral("trayChckBx"));
+        trayChckBx->setGeometry(QRect(43, 36, 51, 31));
         fitBtn = new QToolButton(groupBox);
         fitBtn->setObjectName(QStringLiteral("fitBtn"));
         fitBtn->setEnabled(false);
-        fitBtn->setGeometry(QRect(10, 160, 21, 21));
+        fitBtn->setGeometry(QRect(10, 40, 22, 22));
         openBtn = new QToolButton(groupBox);
         openBtn->setObjectName(QStringLiteral("openBtn"));
         openBtn->setEnabled(false);
-        openBtn->setGeometry(QRect(40, 160, 21, 22));
+        openBtn->setGeometry(QRect(70, 10, 22, 22));
         comboBox = new QComboBox(groupBox);
         comboBox->setObjectName(QStringLiteral("comboBox"));
         comboBox->setGeometry(QRect(10, 280, 79, 22));
@@ -153,7 +143,17 @@ public:
         saveBtn->setGeometry(QRect(10, 390, 41, 21));
         lineEdit = new QLineEdit(groupBox);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(10, 130, 81, 22));
+        lineEdit->setGeometry(QRect(10, 70, 81, 22));
+        treeBtn = new QToolButton(groupBox);
+        treeBtn->setObjectName(QStringLiteral("treeBtn"));
+        treeBtn->setGeometry(QRect(10, 10, 22, 22));
+        treeBtn->setCheckable(true);
+        treeBtn->setChecked(true);
+        listBtn = new QToolButton(groupBox);
+        listBtn->setObjectName(QStringLiteral("listBtn"));
+        listBtn->setGeometry(QRect(40, 10, 22, 22));
+        listBtn->setCheckable(true);
+        listBtn->setChecked(true);
 
         horizontalLayout_2->addWidget(groupBox);
 
@@ -182,23 +182,16 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Description v5.0", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("MainWindow", "Control", Q_NULLPTR));
-        tree_tbtn->setText(QApplication::translate("MainWindow", "Tree", Q_NULLPTR));
-        list_tbtn->setText(QApplication::translate("MainWindow", "List", Q_NULLPTR));
-        tray_checkbox->setText(QApplication::translate("MainWindow", "Minimize\n"
-"to tray", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        fitBtn->setToolTip(QApplication::translate("MainWindow", "Fit image to width", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
+        groupBox->setTitle(QString());
+        trayChckBx->setText(QApplication::translate("MainWindow", "Tray", Q_NULLPTR));
         fitBtn->setText(QApplication::translate("MainWindow", "Fit", Q_NULLPTR));
-#ifndef QT_NO_TOOLTIP
-        openBtn->setToolTip(QApplication::translate("MainWindow", "Open file in parent directory", Q_NULLPTR));
-#endif // QT_NO_TOOLTIP
         openBtn->setText(QApplication::translate("MainWindow", "Open", Q_NULLPTR));
         zoomLbl->setText(QApplication::translate("MainWindow", "100%", Q_NULLPTR));
         addBtn->setText(QApplication::translate("MainWindow", "Add", Q_NULLPTR));
         deleteBtn->setText(QApplication::translate("MainWindow", "Del", Q_NULLPTR));
         saveBtn->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
+        treeBtn->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
+        listBtn->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
     } // retranslateUi
 
 };

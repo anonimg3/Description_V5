@@ -518,12 +518,14 @@ QToolButton:hover {
     background-color: rgb(88,87,88); /* kindaDark */
     border: none;
     border-radius: 3px;
+	padding: 0px;
+	margin: 0px;
+    font-size: 16px;
 }
 
 QToolButton[accessibleName="addBtn"] {
    color: rgba(0,255,0,0.2);
 }
-
 QToolButton[accessibleName="addBtn"]:hover {
    color: rgba(0,255,0,1);
 }
@@ -557,6 +559,19 @@ QToolButton[accessibleName="openBtn"]:hover {
    color: rgba(0,0,255,1);
 }
 
+QToolButton[accessibleName="treeBtn"] {
+   color: rgba(0,255,0,0.2);
+}
+QToolButton[accessibleName="treeBtn"]:hover {
+   color: rgba(0,255,0,1);
+}
+
+QToolButton[accessibleName="listBtn"] {
+   color: rgba(0,255,0,0.2);
+}
+QToolButton[accessibleName="listBtn"]:hover {
+   color: rgba(0,255,0,1);
+}
 
 
 

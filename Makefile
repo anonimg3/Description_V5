@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = description1.0.0
-DISTDIR = /home/anonim/MEGAsync/Qt/Description\ V5/Description\ V5/.tmp/description1.0.0
+DISTDIR = /home/anonim/MEGAsync/Qt/Description\ V5/Description_V5/.tmp/description1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath,/home/anonim/Qt/5.9.1/gcc_64/lib -Wl,-rpath-link,/home/anonim/Qt/5.9.1/gcc_64/lib
 LIBS          = $(SUBLIBS) -L/home/anonim/Qt/5.9.1/gcc_64/lib -lQt5WebEngineWidgets -lQt5WebEngineCore -lQt5Quick -lQt5PrintSupport -lQt5Widgets -lQt5Gui -lQt5WebChannel -lQt5Qml -lQt5Network -lQt5Positioning -lQt5Core -lGL -lpthread 
@@ -707,7 +707,16 @@ qrc_colorsyntax.cpp: colorsyntax.qrc \
 	/home/anonim/Qt/5.9.1/gcc_64/bin/rcc -name colorsyntax colorsyntax.qrc -o qrc_colorsyntax.cpp
 
 qrc_theme.cpp: theme.qrc \
-		../../../../Qt/5.9.1/gcc_64/bin/rcc
+		../../../../Qt/5.9.1/gcc_64/bin/rcc \
+		Dark/unmute.png \
+		Dark/down_arrow.png \
+		Dark/mute.png \
+		Dark/updown.png \
+		Dark/cogwheel.png \
+		Dark/plus.png \
+		Dark/up_arrow.png \
+		Dark/minus.png \
+		style.qss
 	/home/anonim/Qt/5.9.1/gcc_64/bin/rcc -name theme theme.qrc -o qrc_theme.cpp
 
 qrc_QtAwesome.cpp: QtAwesome/QtAwesome.qrc \
@@ -892,7 +901,7 @@ moc_mainwindow.cpp: ../../../../Qt/5.9.1/gcc_64/include/QtWidgets/QMainWindow \
 		mainwindow.h \
 		moc_predefs.h \
 		../../../../Qt/5.9.1/gcc_64/bin/moc
-	/home/anonim/Qt/5.9.1/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/anonim/Qt/5.9.1/gcc_64/mkspecs/linux-g++ -I'/home/anonim/MEGAsync/Qt/Description V5/Description V5' -I'/home/anonim/MEGAsync/Qt/Description V5/Description V5/QtAwesome' -I/home/anonim/Qt/5.9.1/gcc_64/include -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineCore -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQuick -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPrintSupport -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtGui -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebChannel -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQml -I/home/anonim/Qt/5.9.1/gcc_64/include/QtNetwork -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPositioning -I/home/anonim/Qt/5.9.1/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+	/home/anonim/Qt/5.9.1/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/anonim/Qt/5.9.1/gcc_64/mkspecs/linux-g++ -I'/home/anonim/MEGAsync/Qt/Description V5/Description_V5' -I'/home/anonim/MEGAsync/Qt/Description V5/Description_V5/QtAwesome' -I/home/anonim/Qt/5.9.1/gcc_64/include -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineCore -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQuick -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPrintSupport -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtGui -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebChannel -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQml -I/home/anonim/Qt/5.9.1/gcc_64/include/QtNetwork -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPositioning -I/home/anonim/Qt/5.9.1/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 moc_QtAwesome.cpp: QtAwesome/QtAwesomeAnim.h \
 		../../../../Qt/5.9.1/gcc_64/include/QtCore/QObject \
@@ -994,7 +1003,7 @@ moc_QtAwesome.cpp: QtAwesome/QtAwesomeAnim.h \
 		QtAwesome/QtAwesome.h \
 		moc_predefs.h \
 		../../../../Qt/5.9.1/gcc_64/bin/moc
-	/home/anonim/Qt/5.9.1/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/anonim/Qt/5.9.1/gcc_64/mkspecs/linux-g++ -I'/home/anonim/MEGAsync/Qt/Description V5/Description V5' -I'/home/anonim/MEGAsync/Qt/Description V5/Description V5/QtAwesome' -I/home/anonim/Qt/5.9.1/gcc_64/include -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineCore -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQuick -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPrintSupport -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtGui -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebChannel -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQml -I/home/anonim/Qt/5.9.1/gcc_64/include/QtNetwork -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPositioning -I/home/anonim/Qt/5.9.1/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include QtAwesome/QtAwesome.h -o moc_QtAwesome.cpp
+	/home/anonim/Qt/5.9.1/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/anonim/Qt/5.9.1/gcc_64/mkspecs/linux-g++ -I'/home/anonim/MEGAsync/Qt/Description V5/Description_V5' -I'/home/anonim/MEGAsync/Qt/Description V5/Description_V5/QtAwesome' -I/home/anonim/Qt/5.9.1/gcc_64/include -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineCore -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQuick -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPrintSupport -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtGui -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebChannel -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQml -I/home/anonim/Qt/5.9.1/gcc_64/include/QtNetwork -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPositioning -I/home/anonim/Qt/5.9.1/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include QtAwesome/QtAwesome.h -o moc_QtAwesome.cpp
 
 moc_QtAwesomeAnim.cpp: ../../../../Qt/5.9.1/gcc_64/include/QtCore/QObject \
 		../../../../Qt/5.9.1/gcc_64/include/QtCore/qobject.h \
@@ -1046,7 +1055,7 @@ moc_QtAwesomeAnim.cpp: ../../../../Qt/5.9.1/gcc_64/include/QtCore/QObject \
 		QtAwesome/QtAwesomeAnim.h \
 		moc_predefs.h \
 		../../../../Qt/5.9.1/gcc_64/bin/moc
-	/home/anonim/Qt/5.9.1/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/anonim/Qt/5.9.1/gcc_64/mkspecs/linux-g++ -I'/home/anonim/MEGAsync/Qt/Description V5/Description V5' -I'/home/anonim/MEGAsync/Qt/Description V5/Description V5/QtAwesome' -I/home/anonim/Qt/5.9.1/gcc_64/include -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineCore -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQuick -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPrintSupport -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtGui -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebChannel -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQml -I/home/anonim/Qt/5.9.1/gcc_64/include/QtNetwork -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPositioning -I/home/anonim/Qt/5.9.1/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include QtAwesome/QtAwesomeAnim.h -o moc_QtAwesomeAnim.cpp
+	/home/anonim/Qt/5.9.1/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/anonim/Qt/5.9.1/gcc_64/mkspecs/linux-g++ -I'/home/anonim/MEGAsync/Qt/Description V5/Description_V5' -I'/home/anonim/MEGAsync/Qt/Description V5/Description_V5/QtAwesome' -I/home/anonim/Qt/5.9.1/gcc_64/include -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebEngineCore -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQuick -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPrintSupport -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWidgets -I/home/anonim/Qt/5.9.1/gcc_64/include/QtGui -I/home/anonim/Qt/5.9.1/gcc_64/include/QtWebChannel -I/home/anonim/Qt/5.9.1/gcc_64/include/QtQml -I/home/anonim/Qt/5.9.1/gcc_64/include/QtNetwork -I/home/anonim/Qt/5.9.1/gcc_64/include/QtPositioning -I/home/anonim/Qt/5.9.1/gcc_64/include/QtCore -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include QtAwesome/QtAwesomeAnim.h -o moc_QtAwesomeAnim.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:

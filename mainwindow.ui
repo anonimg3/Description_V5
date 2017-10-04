@@ -68,58 +68,19 @@
            </size>
           </property>
           <property name="title">
-           <string>Control</string>
+           <string/>
           </property>
-          <widget class="QToolButton" name="tree_tbtn">
+          <widget class="QCheckBox" name="trayChckBx">
            <property name="geometry">
             <rect>
-             <x>10</x>
-             <y>30</y>
-             <width>80</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Tree</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="list_tbtn">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>60</y>
-             <width>80</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>List</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-          </widget>
-          <widget class="QCheckBox" name="tray_checkbox">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>90</y>
-             <width>85</width>
+             <x>43</x>
+             <y>36</y>
+             <width>51</width>
              <height>31</height>
             </rect>
            </property>
            <property name="text">
-            <string>Minimize
-to tray</string>
+            <string>Tray</string>
            </property>
           </widget>
           <widget class="QToolButton" name="fitBtn">
@@ -129,13 +90,10 @@ to tray</string>
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>160</y>
-             <width>21</width>
-             <height>21</height>
+             <y>40</y>
+             <width>22</width>
+             <height>22</height>
             </rect>
-           </property>
-           <property name="toolTip">
-            <string>Fit image to width</string>
            </property>
            <property name="text">
             <string>Fit</string>
@@ -147,14 +105,11 @@ to tray</string>
            </property>
            <property name="geometry">
             <rect>
-             <x>40</x>
-             <y>160</y>
-             <width>21</width>
+             <x>70</x>
+             <y>10</y>
+             <width>22</width>
              <height>22</height>
             </rect>
-           </property>
-           <property name="toolTip">
-            <string>Open file in parent directory</string>
            </property>
            <property name="text">
             <string>Open</string>
@@ -263,10 +218,48 @@ to tray</string>
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>130</y>
+             <y>70</y>
              <width>81</width>
              <height>22</height>
             </rect>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="treeBtn">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>22</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QToolButton" name="listBtn">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>10</y>
+             <width>22</width>
+             <height>22</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
            </property>
           </widget>
          </widget>

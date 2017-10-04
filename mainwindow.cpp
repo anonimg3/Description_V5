@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     appFilePath =  qApp->applicationDirPath();
-    expandTreeView = false;
+
 
     page = new QWebEnginePage(this);
 
@@ -30,12 +30,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->saveBtn->setAccessibleName("saveBtn");
     ui->fitBtn->setAccessibleName("fitBtn");
     ui->openBtn->setAccessibleName("openBtn");
+    ui->treeBtn->setAccessibleName("treeBtn");
+    ui->listBtn->setAccessibleName("listBtn");
+
 
     ui->addBtn->setText( QChar(fa::pluscircle) );
     ui->deleteBtn->setText( QChar(fa::minuscircle) );
     ui->saveBtn->setText( QChar(fa::floppyo) );
     ui->fitBtn->setText( QChar(fa::arrowsalt) );
     ui->openBtn->setText( QChar(fa::folderopen) );
+    ui->treeBtn->setText( QChar(fa::exchange) );
+    ui->listBtn->setText( QChar(fa::exchange) );
+
+
+    setAllToolTip();
 
     QFile styleSheet( ":/css/style.qss" );
 //    QFile styleSheet( "./style.qss" );
@@ -220,21 +228,36 @@ void MainWindow::readfile( QString filename, QString type ){
 
 
 
-void MainWindow::on_tree_tbtn_clicked(bool checked)
+void MainWindow::on_treeBtn_clicked(bool checked)
 {
     checked ? ui->treeView->setVisible( true ) : ui->treeView->setVisible( false );
 }
 
-void MainWindow::on_list_tbtn_clicked(bool checked)
+void MainWindow::on_listBtn_clicked(bool checked)
 {
     checked ? ui->listView->setVisible( true ) : ui->listView->setVisible( false );
+}
+
+void MainWindow::setAllToolTip()
+{
+    ui->addBtn->setToolTip("Add path to bookmarks");
+    ui->deleteBtn->setToolTip("Remove bookmark");
+    ui->saveBtn->setToolTip("Save bookmarks");
+    ui->fitBtn->setToolTip("Fit image to window width");
+    ui->openBtn->setToolTip("Open file in parent directory");
+    ui->trayChckBx->setToolTip("Minimize to tray");
+    ui->treeBtn->setToolTip("Show/hide tree view");
+    ui->listView->setToolTip("Show/hide list view");
+    ui->lineEdit->setToolTip("Filter data");
+
+
 }
 
 
 
 void MainWindow::closeEvent(QCloseEvent * event)
 {
-    if(this->isVisible() && ui->tray_checkbox->isChecked()){
+    if(this->isVisible() && ui->trayChckBx->isChecked()){
         event->ignore();
         this->hide();
         QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(QSystemTrayIcon::Information);
@@ -250,7 +273,7 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     switch (reason){
     case QSystemTrayIcon::Trigger:
-        if(ui->tray_checkbox->isChecked()){
+        if(ui->trayChckBx->isChecked()){
             if(!this->isVisible()){
                 this->show();
             } else {
@@ -306,13 +329,8 @@ void MainWindow::on_comboBox_activated(const QString &arg1)
 //    ui->listView->setRootIndex( filemodel->setRootPath(arg1) );
 
     ui->listView->setRootIndex(filemodel->index(arg1));
+    ui->treeView->setRootIndex(dirmodel->index(arg1));
 
-    if (expandTreeView){
-        ui->treeView->expand(dirmodel->index(arg1));
-        ui->treeView->scrollTo(dirmodel->index(arg1));
-    }else{
-        ui->treeView->setRootIndex(dirmodel->index(arg1));
-    }
 
 
 }
@@ -383,5 +401,6 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 
 
 }
+
 
 

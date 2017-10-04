@@ -41,10 +41,10 @@ private slots:
 
     void on_openBtn_clicked();
 
-    void on_tree_tbtn_clicked(bool checked);
+    void on_treeBtn_clicked(bool checked);
 
-    void on_list_tbtn_clicked(bool checked);
-
+    void on_listBtn_clicked(bool checked);
+    void setAllToolTip();
 
 
     void displayText(QString text);
@@ -78,7 +78,7 @@ private:
     QString file_info;
     bool areFitting;
     QString appFilePath;
-    bool expandTreeView;
+
 };
 
 #endif // MAINWINDOW_H
