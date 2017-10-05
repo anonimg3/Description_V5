@@ -516,61 +516,88 @@ QLabel#errorLabel {
 QToolButton:hover {
     color: rgb(225,224,225); /* veryLight */
     background-color: rgb(88,87,88); /* kindaDark */
-    border: none;
+    border: 1px solid rgb(31,30,31);
     border-radius: 3px;
 	padding: 0px;
 	margin: 0px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
+/* addBtn */
 QToolButton[accessibleName="addBtn"] {
-   color: rgba(0,255,0,0.2);
+   color: rgba(0,255,0,.7);
 }
 QToolButton[accessibleName="addBtn"]:hover {
    color: rgba(0,255,0,1);
 }
-
-
+QToolButton[accessibleName="addBtn"]:disabled {
+   color: rgba(0,0,255,.2);
+}
+/* deleteBtn */
 QToolButton[accessibleName="deleteBtn"] {
-   color: rgba(255,0,0,0.2);
+   color: rgba(255,0,0,.7);
 }
 QToolButton[accessibleName="deleteBtn"]:hover {
    color: rgba(225,0,0,1);
 }
-
+QToolButton[accessibleName="deleteBtn"]:disabled {
+   color: rgba(0,0,255,.2);
+}
+/* saveBtn */
 QToolButton[accessibleName="saveBtn"] {
-   color: rgba(0,0,255,0.2);
+   color: rgba(0,0,255,.7);
 }
 QToolButton[accessibleName="saveBtn"]:hover {
    color: rgba(0,0,255,1);
 }
-
+QToolButton[accessibleName="saveBtn"]:disabled {
+   color: rgba(0,0,255,.2);
+}
+/* fitBtn */
 QToolButton[accessibleName="fitBtn"] {
-   color: rgba(0,0,255,0.2);
+   color: rgba(0,0,255,.7);
 }
 QToolButton[accessibleName="fitBtn"]:hover {
    color: rgba(0,0,255,1);
 }
-
+QToolButton[accessibleName="fitBtn"]:disabled {
+   color: rgba(0,0,255,.2);
+}
+/* openBtn */
 QToolButton[accessibleName="openBtn"] {
-   color: rgba(0,0,255,0.2);
+   color: rgba(0,0,255,.7);
 }
 QToolButton[accessibleName="openBtn"]:hover {
    color: rgba(0,0,255,1);
 }
-
+QToolButton[accessibleName="openBtn"]:disabled {
+   color: rgba(0,0,255,.2);
+}
+/* treeBtn */
 QToolButton[accessibleName="treeBtn"] {
-   color: rgba(0,255,0,0.2);
+   color: rgba(0,255,0,.2);
 }
 QToolButton[accessibleName="treeBtn"]:hover {
    color: rgba(0,255,0,1);
 }
-
+QToolButton[accessibleName="treeBtn"]:disabled {
+   color: rgba(0,255,0,.3);
+}
+QToolButton[accessibleName="treeBtn"]:checked {
+   color: rgba(0,255,0,.7);
+}
+/* listBtn */
 QToolButton[accessibleName="listBtn"] {
-   color: rgba(0,255,0,0.2);
+   color: rgba(0,255,0,.2);
 }
 QToolButton[accessibleName="listBtn"]:hover {
    color: rgba(0,255,0,1);
+}
+QToolButton[accessibleName="listBtn"]:disabled {
+   color: rgba(0,255,0,.3);
+}
+QToolButton[accessibleName="listBtn"]:checked {
+   color: rgba(0,255,0,.7);
 }
 
 

@@ -57,210 +57,220 @@
            </property>
           </widget>
           <widget class="QListView" name="listView"/>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="groupBox">
-          <property name="minimumSize">
-           <size>
-            <width>101</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="title">
-           <string/>
-          </property>
-          <widget class="QCheckBox" name="trayChckBx">
-           <property name="geometry">
-            <rect>
-             <x>43</x>
-             <y>36</y>
-             <width>51</width>
-             <height>31</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Tray</string>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="fitBtn">
+          <widget class="QGroupBox" name="groupBox">
            <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>40</y>
-             <width>22</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Fit</string>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="openBtn">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="geometry">
-            <rect>
-             <x>70</x>
-             <y>10</y>
-             <width>22</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Open</string>
-           </property>
-          </widget>
-          <widget class="QComboBox" name="comboBox">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>280</y>
-             <width>79</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="editable">
             <bool>true</bool>
            </property>
-           <property name="maxVisibleItems">
-            <number>5</number>
-           </property>
-          </widget>
-          <widget class="QSlider" name="zoomSlider">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>320</y>
-             <width>71</width>
-             <height>16</height>
-            </rect>
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>0</height>
+            </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>200</width>
+             <width>70</width>
              <height>16777215</height>
             </size>
            </property>
-           <property name="minimum">
-            <number>20</number>
+           <property name="title">
+            <string/>
            </property>
-           <property name="maximum">
-            <number>200</number>
-           </property>
-           <property name="singleStep">
-            <number>5</number>
-           </property>
-           <property name="sliderPosition">
-            <number>100</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-          <widget class="QLabel" name="zoomLbl">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>340</y>
-             <width>59</width>
-             <height>14</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>100%</string>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="addBtn">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>370</y>
-             <width>41</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Add</string>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="deleteBtn">
-           <property name="geometry">
-            <rect>
-             <x>50</x>
-             <y>370</y>
-             <width>41</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Del</string>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="saveBtn">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>390</y>
-             <width>41</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Save</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>70</y>
-             <width>81</width>
-             <height>22</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="treeBtn">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>10</y>
-             <width>22</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>...</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="listBtn">
-           <property name="geometry">
-            <rect>
-             <x>40</x>
-             <y>10</y>
-             <width>22</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>...</string>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
+           <widget class="QCheckBox" name="trayChckBx">
+            <property name="geometry">
+             <rect>
+              <x>7</x>
+              <y>90</y>
+              <width>55</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Tray</string>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="fitBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>37</x>
+              <y>40</y>
+              <width>25</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Fit</string>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="openBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>7</x>
+              <y>40</y>
+              <width>25</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Open</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="comboBox">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>290</y>
+              <width>51</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <property name="maxVisibleItems">
+             <number>5</number>
+            </property>
+           </widget>
+           <widget class="QSlider" name="zoomSlider">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>320</y>
+              <width>41</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="minimum">
+             <number>20</number>
+            </property>
+            <property name="maximum">
+             <number>200</number>
+            </property>
+            <property name="singleStep">
+             <number>5</number>
+            </property>
+            <property name="pageStep">
+             <number>5</number>
+            </property>
+            <property name="sliderPosition">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="QLabel" name="zoomLbl">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>340</y>
+              <width>59</width>
+              <height>14</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>100%</string>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="addBtn">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>370</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="deleteBtn">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>350</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Del</string>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="saveBtn">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>390</y>
+              <width>41</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="geometry">
+             <rect>
+              <x>7</x>
+              <y>70</y>
+              <width>55</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="treeBtn">
+            <property name="geometry">
+             <rect>
+              <x>7</x>
+              <y>10</y>
+              <width>25</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QToolButton" name="listBtn">
+            <property name="geometry">
+             <rect>
+              <x>37</x>
+              <y>10</y>
+              <width>25</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
           </widget>
          </widget>
         </item>

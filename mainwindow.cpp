@@ -12,6 +12,7 @@
 #include <QWebEngineView>
 #include <QSortFilterProxyModel>
 #include <QtAwesome/QtAwesome.h>
+#include <QSettings>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,28 +20,17 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     appFilePath =  qApp->applicationDirPath();
-
+    QSettings settings("DescriptionSettings");
+    setDefaultSettings();
 
     page = new QWebEnginePage(this);
 
     proxymodel = new QSortFilterProxyModel();
 
-    ui->addBtn->setAccessibleName("addBtn");
-    ui->deleteBtn->setAccessibleName("deleteBtn");
-    ui->saveBtn->setAccessibleName("saveBtn");
-    ui->fitBtn->setAccessibleName("fitBtn");
-    ui->openBtn->setAccessibleName("openBtn");
-    ui->treeBtn->setAccessibleName("treeBtn");
-    ui->listBtn->setAccessibleName("listBtn");
 
 
-    ui->addBtn->setText( QChar(fa::pluscircle) );
-    ui->deleteBtn->setText( QChar(fa::minuscircle) );
-    ui->saveBtn->setText( QChar(fa::floppyo) );
-    ui->fitBtn->setText( QChar(fa::arrowsalt) );
-    ui->openBtn->setText( QChar(fa::folderopen) );
-    ui->treeBtn->setText( QChar(fa::exchange) );
-    ui->listBtn->setText( QChar(fa::exchange) );
+    ui->lineEdit->setPlaceholderText("Filter");
+    setBtnIcons();
 
 
     setAllToolTip();
@@ -52,8 +42,6 @@ MainWindow::MainWindow(QWidget *parent) :
         styleSheet.close();
     }
 
-
-
     ui->statusBar->addWidget(ui->comboBox,1);
     ui->statusBar->addWidget(ui->addBtn);
     ui->statusBar->addWidget(ui->deleteBtn);
@@ -62,7 +50,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->statusBar->addPermanentWidget(ui->zoomSlider);
 
     areFitting = false;
-
 
 /***  Tray   ***/
         trayIcon = new QSystemTrayIcon(this);
@@ -84,20 +71,16 @@ MainWindow::MainWindow(QWidget *parent) :
 
         connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
                 this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
-
 /////////////////////////////////////////////////////////////////////////
-        QString sPath = appFilePath;
         dirmodel = new QFileSystemModel(this);
-        dirmodel->setRootPath(sPath);
-        dirmodel->setFilter( QDir::NoDotAndDotDot | QDir::AllDirs );
+        dirmodel->setRootPath(appFilePath);
+        dirmodel->setFilter(QDir::NoDotAndDotDot | QDir::AllDirs);
         ui->treeView->setModel(dirmodel);
 
         filemodel = new QFileSystemModel(this);
-        filemodel->setRootPath(sPath);
+        filemodel->setRootPath(appFilePath);
         filemodel->setFilter(QDir::NoDotAndDotDot | QDir::Files);
         ui->listView->setModel(filemodel);
-
-
 /////////////////////////////////////////////////////////////////////////
         // load bookmarks
         QFile bookmarksFile(appFilePath + "/bookmarks.conf");
@@ -107,13 +90,10 @@ MainWindow::MainWindow(QWidget *parent) :
         }
         bookmarksFile.close();
 
-
         on_comboBox_activated(ui->comboBox->itemText(0));
 
         QtAwesome* awesome = new QtAwesome( qApp );
         awesome->initFontAwesome();     // This line is important as it loads the font and initializes the named icon map
-
-
 
 
 }
@@ -164,11 +144,6 @@ void MainWindow::on_listView_clicked(const QModelIndex &index)
         displayText("This extension is not supported");
         ui->listView->clearSelection();
     }
-
-
-
-
-
 }
 
 
@@ -176,8 +151,6 @@ void MainWindow::on_listView_clicked(const QModelIndex &index)
 void MainWindow::readfile( QString filename, QString type ){
 
     QFile file(filename);
-
-
 
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
         QString text;
@@ -197,8 +170,6 @@ void MainWindow::readfile( QString filename, QString type ){
          }
         cssFile.close();
 
-
-
         QFile jsFile(":/js/prism.js");
         QTextStream jsStream(&jsFile);
         if (jsFile.open(QIODevice::ReadOnly | QIODevice::Text)){
@@ -207,8 +178,6 @@ void MainWindow::readfile( QString filename, QString type ){
             text.append("</script>");
          }
         jsFile.close();
-
-
 
         text.append("</head>");
         text.append("<body>");
@@ -226,8 +195,6 @@ void MainWindow::readfile( QString filename, QString type ){
     file.close();
 }
 
-
-
 void MainWindow::on_treeBtn_clicked(bool checked)
 {
     checked ? ui->treeView->setVisible( true ) : ui->treeView->setVisible( false );
@@ -240,20 +207,18 @@ void MainWindow::on_listBtn_clicked(bool checked)
 
 void MainWindow::setAllToolTip()
 {
-    ui->addBtn->setToolTip("Add path to bookmarks");
-    ui->deleteBtn->setToolTip("Remove bookmark");
-    ui->saveBtn->setToolTip("Save bookmarks");
-    ui->fitBtn->setToolTip("Fit image to window width");
-    ui->openBtn->setToolTip("Open file in parent directory");
-    ui->trayChckBx->setToolTip("Minimize to tray");
-    ui->treeBtn->setToolTip("Show/hide tree view");
-    ui->listView->setToolTip("Show/hide list view");
-    ui->lineEdit->setToolTip("Filter data");
+    ui->addBtn->setToolTip(settings.value("addBtn-ToolTip").toString());
+    ui->deleteBtn->setToolTip(settings.value("deleteBtn-ToolTip").toString());
+    ui->saveBtn->setToolTip(settings.value("saveBtn-ToolTip").toString());
+    ui->fitBtn->setToolTip(settings.value("fitBtn-ToolTip").toString());
+    ui->openBtn->setToolTip(settings.value("openBtn-ToolTip").toString());
+    ui->trayChckBx->setToolTip(settings.value("trayChckBx-ToolTip").toString());
+    ui->treeBtn->setToolTip(settings.value("treeBtn-ToolTip").toString());
+    ui->listBtn->setToolTip(settings.value("listBtn-ToolTip").toString());
+    ui->lineEdit->setToolTip(settings.value("lineEdit-ToolTip").toString());
 
 
 }
-
-
 
 void MainWindow::closeEvent(QCloseEvent * event)
 {
@@ -267,6 +232,8 @@ void MainWindow::closeEvent(QCloseEvent * event)
                               icon,
                               2000);
     }
+
+
 }
 
 void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
@@ -286,7 +253,6 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
     }
 }
 
-
 void MainWindow::on_fitBtn_clicked()
 {
     ui->zoomSlider->setValue(100);
@@ -295,22 +261,10 @@ void MainWindow::on_fitBtn_clicked()
     areFitting = true;
 }
 
-
-
-
-
-
 void MainWindow::on_openBtn_clicked()
 {
     if ( !path.isNull() ) QDesktopServices::openUrl(QUrl::fromLocalFile( path )) ;
 }
-
-
-
-
-
-
-
 
 void MainWindow::displayText(QString text)
 {
@@ -322,22 +276,22 @@ void MainWindow::displayInfo(QString path)
 {
     path = QFileInfo(path).absolutePath(); // only path without file name
     ui->comboBox->setCurrentText(path);
+    if(areFitting) ui->zoomLbl->setText("100%");
 }
 
 void MainWindow::on_comboBox_activated(const QString &arg1)
 {
 //    ui->listView->setRootIndex( filemodel->setRootPath(arg1) );
-
-    ui->listView->setRootIndex(filemodel->index(arg1));
+//    ui->listView->setRootIndex(filemodel->index(arg1));
+    path = arg1;
+    ui->listView->setRootIndex(filemodel->setRootPath(arg1));
     ui->treeView->setRootIndex(dirmodel->index(arg1));
-
-
-
+    on_lineEdit_textChanged( ui->lineEdit->text() );
 }
 
 void MainWindow::on_listView_doubleClicked(const QModelIndex &index)
 {
-    if ( !path.isNull() ) QDesktopServices::openUrl(QUrl::fromLocalFile( path )) ;
+    QDesktopServices::openUrl(QUrl::fromLocalFile( dirmodel->filePath(index) )) ;
 }
 
 
@@ -380,26 +334,53 @@ void MainWindow::on_saveBtn_clicked()
 
 void MainWindow::on_lineEdit_textChanged(const QString &arg1)
 {
+    (arg1.isEmpty()) ? filterResults("*") : filterResults(arg1);
+}
 
-    // Set the filter
-    QStringList filter;
-
-    (ui->lineEdit->text().isEmpty()) ? filter <<  "*" : filter <<  "?" + ui->lineEdit->text() + "? *";
-
-
-    filemodel->setNameFilters(filter);
-
-
-    // Did not pass the filter file disable or hidden, true disable false
+void MainWindow::filterResults(const QString &filter)
+{
+    filemodel->setNameFilters( QStringList(filter) );
     filemodel->setNameFilterDisables(false);
-// not working because we set root index in "combobox" !!!!!
+//    ui->listView->setRootIndex(filemodel->setRootPath(ui->comboBox->currentText()));
+    ui->listView->setRootIndex(filemodel->setRootPath(path));
+}
 
-//    ui->listView->setModel(filemodel);
+void MainWindow::setDefaultSettings()
+{
+    settings.clear();
+    settings.setValue("addBtn-ToolTip","Add bookmark");
+    settings.setValue("deleteBtn-ToolTip","Remove bookmark");
+    settings.setValue("saveBtn-ToolTip","Save bookmarks");
+    settings.setValue("fitBtn-ToolTip","Fit image to window width");
+    settings.setValue("openBtn-ToolTip","Open file in parent directory");
+    settings.setValue("trayChckBx-ToolTip","Minimize to tray");
+    settings.setValue("treeBtn-ToolTip","Show/hide tree view");
+    settings.setValue("listBtn-ToolTip","Show/hide list view");
+    settings.setValue("lineEdit-ToolTip","Filter results");
+}
 
-    ui->listView->setRootIndex(filemodel->setRootPath(ui->comboBox->currentText()));
+void MainWindow::setBtnIcons()
+{
+    ui->addBtn->setAccessibleName("addBtn");
+    ui->addBtn->setText( QChar(fa::pluscircle) );
 
+    ui->deleteBtn->setAccessibleName("deleteBtn");
+    ui->deleteBtn->setText( QChar(fa::minuscircle) );
 
+    ui->saveBtn->setAccessibleName("saveBtn");
+    ui->saveBtn->setText( QChar(fa::floppyo) );
 
+    ui->fitBtn->setAccessibleName("fitBtn");
+    ui->fitBtn->setText( QChar(fa::arrowsalt) );
+
+    ui->openBtn->setAccessibleName("openBtn");
+    ui->openBtn->setText( QChar(fa::folderopen) );
+
+    ui->treeBtn->setAccessibleName("treeBtn");
+    ui->treeBtn->setText( QChar(fa::exchange) );
+
+    ui->listBtn->setAccessibleName("listBtn");
+    ui->listBtn->setText( QChar(fa::exchange) );
 }
 
 

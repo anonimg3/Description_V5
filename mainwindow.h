@@ -9,6 +9,7 @@
 #include <QSyntaxHighlighter>
 #include <QWebEngineView>
 #include <QSortFilterProxyModel>
+#include <QSettings>
 namespace Ui {
 class MainWindow;
 }
@@ -64,7 +65,9 @@ private slots:
 
     void on_lineEdit_textChanged(const QString &arg1);
 
-
+    void filterResults(const QString &filter);
+    void setDefaultSettings();
+    void setBtnIcons();
 
 private:
     Ui::MainWindow *ui;
@@ -78,6 +81,7 @@ private:
     QString file_info;
     bool areFitting;
     QString appFilePath;
+    QSettings settings;
 
 };
 
