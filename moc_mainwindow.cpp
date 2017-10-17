@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[33];
-    char stringdata0[478];
+    QByteArrayData data[34];
+    char stringdata0[488];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,33 +44,34 @@ QT_MOC_LITERAL(9, 91, 33), // "QSystemTrayIcon::ActivationRe..."
 QT_MOC_LITERAL(10, 125, 6), // "reason"
 QT_MOC_LITERAL(11, 132, 17), // "on_fitBtn_clicked"
 QT_MOC_LITERAL(12, 150, 18), // "on_openBtn_clicked"
-QT_MOC_LITERAL(13, 169, 18), // "on_treeBtn_clicked"
-QT_MOC_LITERAL(14, 188, 7), // "checked"
-QT_MOC_LITERAL(15, 196, 18), // "on_listBtn_clicked"
-QT_MOC_LITERAL(16, 215, 13), // "setAllToolTip"
-QT_MOC_LITERAL(17, 229, 11), // "displayText"
-QT_MOC_LITERAL(18, 241, 4), // "text"
-QT_MOC_LITERAL(19, 246, 11), // "displayInfo"
-QT_MOC_LITERAL(20, 258, 21), // "on_comboBox_activated"
-QT_MOC_LITERAL(21, 280, 4), // "arg1"
-QT_MOC_LITERAL(22, 285, 25), // "on_listView_doubleClicked"
-QT_MOC_LITERAL(23, 311, 26), // "on_zoomSlider_valueChanged"
-QT_MOC_LITERAL(24, 338, 5), // "value"
-QT_MOC_LITERAL(25, 344, 17), // "on_addBtn_clicked"
-QT_MOC_LITERAL(26, 362, 20), // "on_deleteBtn_clicked"
-QT_MOC_LITERAL(27, 383, 18), // "on_saveBtn_clicked"
-QT_MOC_LITERAL(28, 402, 23), // "on_lineEdit_textChanged"
-QT_MOC_LITERAL(29, 426, 13), // "filterResults"
-QT_MOC_LITERAL(30, 440, 6), // "filter"
-QT_MOC_LITERAL(31, 447, 18), // "setDefaultSettings"
-QT_MOC_LITERAL(32, 466, 11) // "setBtnIcons"
+QT_MOC_LITERAL(13, 169, 9), // "trayClose"
+QT_MOC_LITERAL(14, 179, 18), // "on_treeBtn_clicked"
+QT_MOC_LITERAL(15, 198, 7), // "checked"
+QT_MOC_LITERAL(16, 206, 18), // "on_listBtn_clicked"
+QT_MOC_LITERAL(17, 225, 13), // "setAllToolTip"
+QT_MOC_LITERAL(18, 239, 11), // "displayText"
+QT_MOC_LITERAL(19, 251, 4), // "text"
+QT_MOC_LITERAL(20, 256, 11), // "displayInfo"
+QT_MOC_LITERAL(21, 268, 21), // "on_comboBox_activated"
+QT_MOC_LITERAL(22, 290, 4), // "arg1"
+QT_MOC_LITERAL(23, 295, 25), // "on_listView_doubleClicked"
+QT_MOC_LITERAL(24, 321, 26), // "on_zoomSlider_valueChanged"
+QT_MOC_LITERAL(25, 348, 5), // "value"
+QT_MOC_LITERAL(26, 354, 17), // "on_addBtn_clicked"
+QT_MOC_LITERAL(27, 372, 20), // "on_deleteBtn_clicked"
+QT_MOC_LITERAL(28, 393, 18), // "on_saveBtn_clicked"
+QT_MOC_LITERAL(29, 412, 23), // "on_lineEdit_textChanged"
+QT_MOC_LITERAL(30, 436, 13), // "filterResults"
+QT_MOC_LITERAL(31, 450, 6), // "filter"
+QT_MOC_LITERAL(32, 457, 18), // "setDefaultSettings"
+QT_MOC_LITERAL(33, 476, 11) // "setBtnIcons"
 
     },
     "MainWindow\0on_treeView_clicked\0\0index\0"
     "on_listView_clicked\0readfile\0path\0"
     "type\0iconActivated\0QSystemTrayIcon::ActivationReason\0"
     "reason\0on_fitBtn_clicked\0on_openBtn_clicked\0"
-    "on_treeBtn_clicked\0checked\0"
+    "trayClose\0on_treeBtn_clicked\0checked\0"
     "on_listBtn_clicked\0setAllToolTip\0"
     "displayText\0text\0displayInfo\0"
     "on_comboBox_activated\0arg1\0"
@@ -89,7 +90,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      21,   14, // methods
+      22,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -97,27 +98,28 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,  119,    2, 0x08 /* Private */,
-       4,    1,  122,    2, 0x08 /* Private */,
-       5,    2,  125,    2, 0x08 /* Private */,
-       8,    1,  130,    2, 0x08 /* Private */,
-      11,    0,  133,    2, 0x08 /* Private */,
-      12,    0,  134,    2, 0x08 /* Private */,
-      13,    1,  135,    2, 0x08 /* Private */,
-      15,    1,  138,    2, 0x08 /* Private */,
-      16,    0,  141,    2, 0x08 /* Private */,
-      17,    1,  142,    2, 0x08 /* Private */,
-      19,    1,  145,    2, 0x08 /* Private */,
-      20,    1,  148,    2, 0x08 /* Private */,
-      22,    1,  151,    2, 0x08 /* Private */,
-      23,    1,  154,    2, 0x08 /* Private */,
-      25,    0,  157,    2, 0x08 /* Private */,
-      26,    0,  158,    2, 0x08 /* Private */,
-      27,    0,  159,    2, 0x08 /* Private */,
-      28,    1,  160,    2, 0x08 /* Private */,
-      29,    1,  163,    2, 0x08 /* Private */,
-      31,    0,  166,    2, 0x08 /* Private */,
-      32,    0,  167,    2, 0x08 /* Private */,
+       1,    1,  124,    2, 0x08 /* Private */,
+       4,    1,  127,    2, 0x08 /* Private */,
+       5,    2,  130,    2, 0x08 /* Private */,
+       8,    1,  135,    2, 0x08 /* Private */,
+      11,    0,  138,    2, 0x08 /* Private */,
+      12,    0,  139,    2, 0x08 /* Private */,
+      13,    0,  140,    2, 0x08 /* Private */,
+      14,    1,  141,    2, 0x08 /* Private */,
+      16,    1,  144,    2, 0x08 /* Private */,
+      17,    0,  147,    2, 0x08 /* Private */,
+      18,    1,  148,    2, 0x08 /* Private */,
+      20,    1,  151,    2, 0x08 /* Private */,
+      21,    1,  154,    2, 0x08 /* Private */,
+      23,    1,  157,    2, 0x08 /* Private */,
+      24,    1,  160,    2, 0x08 /* Private */,
+      26,    0,  163,    2, 0x08 /* Private */,
+      27,    0,  164,    2, 0x08 /* Private */,
+      28,    0,  165,    2, 0x08 /* Private */,
+      29,    1,  166,    2, 0x08 /* Private */,
+      30,    1,  169,    2, 0x08 /* Private */,
+      32,    0,  172,    2, 0x08 /* Private */,
+      33,    0,  173,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QModelIndex,    3,
@@ -126,19 +128,20 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, 0x80000000 | 9,   10,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   14,
-    QMetaType::Void, QMetaType::Bool,   14,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   18,
+    QMetaType::Void, QMetaType::Bool,   15,
+    QMetaType::Void, QMetaType::Bool,   15,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   19,
     QMetaType::Void, QMetaType::QString,    6,
-    QMetaType::Void, QMetaType::QString,   21,
+    QMetaType::Void, QMetaType::QString,   22,
     QMetaType::Void, QMetaType::QModelIndex,    3,
-    QMetaType::Void, QMetaType::Int,   24,
+    QMetaType::Void, QMetaType::Int,   25,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   21,
-    QMetaType::Void, QMetaType::QString,   30,
+    QMetaType::Void, QMetaType::QString,   22,
+    QMetaType::Void, QMetaType::QString,   31,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -157,21 +160,22 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->iconActivated((*reinterpret_cast< QSystemTrayIcon::ActivationReason(*)>(_a[1]))); break;
         case 4: _t->on_fitBtn_clicked(); break;
         case 5: _t->on_openBtn_clicked(); break;
-        case 6: _t->on_treeBtn_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 7: _t->on_listBtn_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 8: _t->setAllToolTip(); break;
-        case 9: _t->displayText((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 10: _t->displayInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 11: _t->on_comboBox_activated((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 12: _t->on_listView_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 13: _t->on_zoomSlider_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->on_addBtn_clicked(); break;
-        case 15: _t->on_deleteBtn_clicked(); break;
-        case 16: _t->on_saveBtn_clicked(); break;
-        case 17: _t->on_lineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 18: _t->filterResults((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 19: _t->setDefaultSettings(); break;
-        case 20: _t->setBtnIcons(); break;
+        case 6: _t->trayClose(); break;
+        case 7: _t->on_treeBtn_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 8: _t->on_listBtn_clicked((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 9: _t->setAllToolTip(); break;
+        case 10: _t->displayText((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 11: _t->displayInfo((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 12: _t->on_comboBox_activated((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 13: _t->on_listView_doubleClicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 14: _t->on_zoomSlider_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->on_addBtn_clicked(); break;
+        case 16: _t->on_deleteBtn_clicked(); break;
+        case 17: _t->on_saveBtn_clicked(); break;
+        case 18: _t->on_lineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 19: _t->filterResults((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 20: _t->setDefaultSettings(); break;
+        case 21: _t->setBtnIcons(); break;
         default: ;
         }
     }
@@ -202,13 +206,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 21)
+        if (_id < 22)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 21;
+        _id -= 22;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 21)
+        if (_id < 22)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 21;
+        _id -= 22;
     }
     return _id;
 }

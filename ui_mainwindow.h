@@ -112,7 +112,6 @@ public:
         fitBtn->setGeometry(QRect(37, 40, 25, 25));
         openBtn = new QToolButton(groupBox);
         openBtn->setObjectName(QStringLiteral("openBtn"));
-        openBtn->setEnabled(false);
         openBtn->setGeometry(QRect(7, 40, 25, 25));
         comboBox = new QComboBox(groupBox);
         comboBox->setObjectName(QStringLiteral("comboBox"));

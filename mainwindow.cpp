@@ -13,6 +13,7 @@
 #include <QSortFilterProxyModel>
 #include <QtAwesome/QtAwesome.h>
 #include <QSettings>
+#include <QStringBuilder>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -61,7 +62,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QAction * quitAction = new QAction(trUtf8("Close"), this);
 
         connect(viewWindow, SIGNAL(triggered()), this, SLOT(show()));
-        connect(quitAction, SIGNAL(triggered()), this, SLOT(close()));
+        connect(quitAction, SIGNAL(triggered()), this, SLOT(trayClose()));
 
         menu->addAction(viewWindow);
         menu->addAction(quitAction);
@@ -95,6 +96,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QtAwesome* awesome = new QtAwesome( qApp );
         awesome->initFontAwesome();     // This line is important as it loads the font and initializes the named icon map
 
+        path = ui->comboBox->currentText();
 
 }
 
@@ -107,11 +109,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_treeView_clicked(const QModelIndex &index)
 {
-    ui->openBtn->setEnabled(true);
     QString sPath = dirmodel->fileInfo(index).absoluteFilePath();
     ui->listView->setRootIndex(filemodel->setRootPath(sPath));
-    path = sPath;
-    displayInfo(sPath);
+    path = sPath+'/';
+    displayInfo(path);
 }
 
 void MainWindow::on_listView_clicked(const QModelIndex &index)
@@ -123,7 +124,7 @@ void MainWindow::on_listView_clicked(const QModelIndex &index)
 
     path = dirmodel->fileInfo(index).absoluteFilePath();
 
-    if (file_type.toLower() == "txt") readfile( path, "textile" );
+    if (file_type.toLower() == "txt") readfile( path, "none" );
     else if (file_type.toLower()  == "c")   readfile( path, "clike" );
     else if (file_type.toLower()  == "css") readfile( path, "css" );
     else if (file_type.toLower()  == "html") readfile( path, "php" );
@@ -263,7 +264,14 @@ void MainWindow::on_fitBtn_clicked()
 
 void MainWindow::on_openBtn_clicked()
 {
+    path = QFileInfo(path).absolutePath(); // only path without file name
     if ( !path.isNull() ) QDesktopServices::openUrl(QUrl::fromLocalFile( path )) ;
+}
+
+void MainWindow::trayClose()
+{
+    ui->trayChckBx->setChecked(false);
+    close();
 }
 
 void MainWindow::displayText(QString text)

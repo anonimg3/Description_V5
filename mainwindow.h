@@ -42,6 +42,7 @@ private slots:
 
     void on_openBtn_clicked();
 
+    void trayClose();
     void on_treeBtn_clicked(bool checked);
 
     void on_listBtn_clicked(bool checked);
